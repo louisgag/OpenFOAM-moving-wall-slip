@@ -1,0 +1,4 @@
+fvPatchFields = fields/fvPatchFields
+derivedFvPatchFields = $(fvPatchFields)/derived
+$(derivedFvPatchFields)/myMovingWallSlip/myMovingWallSlipFvPatchVectorField.C
+LIB = $(FOAM_USER_LIBBIN)/libmyFiniteVolume
