@@ -53,10 +53,8 @@ myMovingWallSlipFvPatchVectorField
     const dictionary& dict
 )
 :
-    fixedValueFvPatchVectorField(p, iF)
-{
-    fvPatchVectorField::operator=(vectorField("value", dict, p.size()));
-}
+    fixedValueFvPatchVectorField(p, iF, dict)
+{}
 
 
 Foam::myMovingWallSlipFvPatchVectorField::
