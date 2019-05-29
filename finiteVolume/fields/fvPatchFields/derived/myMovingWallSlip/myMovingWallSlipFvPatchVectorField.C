@@ -130,7 +130,7 @@ void Foam::myMovingWallSlipFvPatchVectorField::updateCoeffs()
 
         const vectorField n(p.nf()); // lg: assuming this is unit surface normal field of patch
         const scalarField& magSf = p.magSf();
-        tmp<scalarField> Un = phip/(magSf + VSMALL);
+        tmp<scalarField> Un = phip/(magSf + vSmall);
         
      const vectorField nHat(this->patch().nf());
 
@@ -146,7 +146,7 @@ void Foam::myMovingWallSlipFvPatchVectorField::updateCoeffs()
 void Foam::myMovingWallSlipFvPatchVectorField::write(Ostream& os) const
 {
     fvPatchVectorField::write(os);
-    writeEntry("value", os);
+    writeEntry(os, "value", *this);
 }
 
 
